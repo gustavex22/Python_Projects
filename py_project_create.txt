@@ -1,0 +1,1 @@
+#usar la terminal con el comando : poetry new [Nombre del projecto]
