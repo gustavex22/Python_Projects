@@ -19,13 +19,32 @@
      1.3 Adaptar la formula fórmula de Bhaskar para las ecuaciones cuadraticas
     2.Respetar la jerarquia de ecuaciones
     3.Adaptar los metodos de resolucion de las Ecuaciones a codigo
+    
+    !!Restriccion = NO USAR EVAL()
 
 """
 import math
 
 
+        
+        
 print("Calculadora de Ecuaciones")
-Ecuacion = input("Introduzca una Ecuacion Lineal")
+#Ecuacion =str( input("Introduzca una Ecuacion Lineal"))
+
+
+
+
+# *  String de ejemplo  = 2* 2 +2
+
+#? jerarquia de ecuaciones
+
+"""1. ()
+      2. ()2
+      3. *  and  /
+      4. +  and -
+      
+      en las 2 ultimas se resuelven de izquierda a derecha
+"""
 
 
 
