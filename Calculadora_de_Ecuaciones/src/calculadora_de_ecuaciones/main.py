@@ -25,11 +25,64 @@
 """
 import math
 
+def resolucion_ecuaciones(ecuacion):
+  Operacion = ecuacion.split("=")
+  P1 = Operacion [0]
+  P2 = Operacion [1]
 
+  index_inicio = P1.find("(")+1 #1
+  index_fin = P1.find(")") #4
+  P1 = P1[index_inicio :index_fin]
+    
+  if P1.find("*") != -1 :
+    operation = "*"
+  elif P1.find("/") != -1:
+    operation = "/"
+  elif P1.find("+") != -1:
+    operation = "+"
+  elif P1.find("-") != -1:
+    operation = "-"
+    
+  P1 = P1.split(operation)
+
+  n1 = int(P1[0])
+  n2 =int(P1[1])
+
+  if operation == "*":
+    P1 = n1 * n2
+  elif operation == "/":
+    P1 = n1 / n2
+  elif operation == "+":
+    P1 = n1 + n2
+  elif operation == "-":
+    P1 = n1 - n2
+
+
+  return P1
+
+  
+  
+  
         
         
 print("Calculadora de Ecuaciones")
 #Ecuacion =str( input("Introduzca una Ecuacion Lineal"))
+Ecuacion = "(2*4)=16"  #resultado 
+print(Ecuacion)
+number_limpio = resolucion_ecuaciones(Ecuacion)
+
+Ecuacion = Ecuacion.split("=")
+Ecuacion = int(Ecuacion[1])
+
+print(f"{number_limpio} = {Ecuacion}")
+
+resultado =int( Ecuacion / number_limpio)
+
+print(resultado)
+
+
+
+
 
 
 
