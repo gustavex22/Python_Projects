@@ -67,8 +67,8 @@ def resolucion_ecuaciones(ecuacion):
         
 print("Calculadora de Ecuaciones")
 #Ecuacion =str( input("Introduzca una Ecuacion Lineal"))
-Ecuacion = "(2*4)=16"  #resultado 
-print(Ecuacion)
+Ecuacion = "(2*4)+(2*4)=16" #resultado 0 
+#print(Ecuacion)
 number_limpio = resolucion_ecuaciones(Ecuacion)
 
 Ecuacion = Ecuacion.split("=")
