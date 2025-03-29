@@ -7,9 +7,12 @@ print(n2)
 
 import re
 
-n2 = "(10)"
+n2 = "(10*1)"
 n3 = re.search(r"\((\d+)\)",n2)
 
 print("El numero es: "+n3.group(1))
 
 #? Este codigo toma el numero dentro del entreparentesis ya sea de 1 o 2 digitos
+
+# *Expresiones generales
+
