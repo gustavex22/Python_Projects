@@ -6,9 +6,12 @@ Altura = 600
 Ancho_jugador = 30
 Altura_jugador = 30
 
+#Velocidad jugador
+Velocity = 5
+
 #Ventana componets
 Ventana_name = "Pacman Recreation"
-fps = 120
+fps = 60
 
 #Colors
 ColorFondo = (0,64,128) #* azul marino
@@ -20,6 +23,7 @@ M_Izquierda = False
 M_Arriba = False
 M_Atras = False
 
-#Posicion
-PosicionX =100
-PosicionY= 100
+#Posicion jugador
+PosicionX =300
+PosicionY= 300
+

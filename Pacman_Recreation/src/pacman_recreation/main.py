@@ -1,22 +1,33 @@
 import pygame
 import Option
 from Jugador import Personaje
+from Estructuras import Muro
 
 """ 
 Recreacion del juego pacman
+
 #?Explicacion
-Reacreare el juego de pacman ,sin usar spriter solo pro medio del codigo en python
+Reacreare el juego de pacman ,sin usar spriter solo por medio del codigo en python
 NO esta permitido usar spriter originales todo se dibujara mediante codigo 
 NO esta permitido ver el codigo original del juego explicitamente o otra recreacion
 Solo se permite ver tuto,documentales y lo necesario para aprender y recrear el codigo de pacman en python
 
 #?Actividades
 -Movimiento(listo)
--Colisiones
+-Colisiones(listo)
+-Mapas
 -Fantasmas
 -IA de los fantasmas
 -Algoritmo de busqueda y persecuacion para los Fantasmas
 """
+
+def DibujadoEnPantalla(Ventana):
+    player.draw(Ventana)#*Dibuja al jugador
+    Estructura.drawEstructure(Ventana,(0,0,128))#*Dibuja el muro
+    Estructura_2.drawEstructure(Ventana,(0,0,128))
+    Estructura_3.drawEstructure(Ventana,(0,0,128))
+    
+
 
 def game():
     #? creamos una ventana con las escalas de anchura y altura
@@ -38,12 +49,12 @@ def game():
         Ventana.fill(Option.ColorFondo)
         
         #?Dibujar jugador
-        player.draw(Ventana)
+        #player.draw(Ventana)
         
-        #?Movimiento posicion
+        #?Movimiento posicion y veloidad
         PX = 0
         PY = 0
-        Velocidad = 5
+        Velocidad = Option.Velocity
         
         #? Sentencias If de movimiento
         
@@ -56,8 +67,22 @@ def game():
         if Option.M_Atras == True:
             PY  += Velocidad
         
-        player.Movimiento(PX,PY)
-        player.draw(Ventana)
+        player.Movimiento(PX,PY) #?Actualiza el movimiento del jugador
+
+       
+        colision = player.forma.colliderect
+        #?Colisiones
+        if colision(Estructura.forma ) or colision(Estructura_2.forma ) or colision(Estructura_3.forma ) :
+            
+            #*Colision detectada
+            print("Colision Detectada")
+            player.Movimiento(-PX,-PY) #? Si hay colision se mueve en la direccion contraria
+           
+        else:
+            print("Colision No Detectada")
+            
+        DibujadoEnPantalla(Ventana) #! Esta funcion solo ordena el orden en que se renderiza ciertos objetos
+
         
         #?bucle para reconocer que teclas se han presionado
         for event in pygame.event.get():
@@ -76,7 +101,7 @@ def game():
                     Option.M_Atras = True
                 if event.key == pygame.K_w or event.key == pygame.K_UP:
                     Option.M_Arriba = True
-                    
+                #! Al dejar de tocar una tecla ,(Por si acaso, no es necesario esta parte del codigo )
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_a or event.key == pygame.K_LEFT:
                     Option.M_Izquierda = False
@@ -101,6 +126,10 @@ Y= Option.PosicionY
 
 #* Referencia a personaje dentro de player
 player =  Personaje(X,Y)#? Ademas inicializa el personaje en la posicion inicial
+
+Estructura = Muro(200,200)
+Estructura_2 =Muro(400,400)
+Estructura_3 =Muro(600,200)
 
 #* Juego principal
 game()
