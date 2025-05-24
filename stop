@@ -1,0 +1,73 @@
+[33mcommit 0312bdf70e9c477b92e7ed38144da00952237dcd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: gustavex22 <gustavex618@gmail.com>
+Date:   Sat Mar 29 19:39:41 2025 -0500
+
+    añadi las colisiones y añadi una nueva tarea para la creacion de mapas
+    
+    tengo planeado reordenar el codigo cuando termine a los fantasmas
+
+[33mcommit 4c761bc51bb19761427b801faaa7b1aeef7e9c86[m
+Author: gustavex22 <gustavex618@gmail.com>
+Date:   Fri Mar 28 23:46:14 2025 -0500
+
+    [Nuevo] Recreacion Pacman
+    Termine el movimiento basico de pacman y añadi algunas actividades
+
+[33mcommit 72981b7ddc5700b07336977ca04aec76cac115da[m
+Author: gustavex22 <gustavex618@gmail.com>
+Date:   Tue Mar 18 12:30:33 2025 -0500
+
+    [Test] solo probe un poco el modulo re
+
+[33mcommit b99fee768d719dbd0713166b783b8e684e1ef12f[m
+Author: gustavex22 <gustavex618@gmail.com>
+Date:   Sun Mar 16 12:18:18 2025 -0500
+
+    me las arregle para hacer una funcion que evalua la ecuacuin lineal por ahora es bastante simple y esta sujeta a cambios
+
+[33mcommit c88492d90ca26a4f1ac2ed0227b397b4d2d8e6a3[m
+Author: gustavex22 <gustavex618@gmail.com>
+Date:   Sat Mar 15 16:37:09 2025 -0500
+
+    [Restriccion] Añadi una restriccion para la funcion eval()
+    (Esta funcion literal hace mas facil lo que tenia pensado hacer bruh)
+
+[33mcommit 37bb83d86e4066ff089f7f49bc424910bb56980a[m
+Author: gustavex22 <gustavex618@gmail.com>
+Date:   Fri Mar 14 21:06:26 2025 -0500
+
+    [Nuevo] projectos de calculadora de Ecuaciones
+    solo agrege una lista de Actividades que cumplira el codigo
+    (Si tengo que usar una pinche IA para esto tambien me mato)
+
+[33mcommit c7b8c7258fbfaa247b31775044f490c0b55b56a9[m
+Author: gustavex22 <gustavex618@gmail.com>
+Date:   Fri Mar 14 18:16:56 2025 -0500
+
+    [Terminado] El projecto de lectura de sentimiento se ha completado
+    (dato curioso: En la sentencia if solo funciona en Ingles correctamente pero si niegas el valor sentiment ,funciona en español XD)
+
+[33mcommit 3444f828a46dcfae741f1ee931c7196af5f15bbb[m
+Merge: 0be706e 51ec348
+Author: gustavex22 <gustavex618@gmail.com>
+Date:   Fri Mar 14 17:43:51 2025 -0500
+
+    Merge branch 'main' of https://github.com/gustavex22/Python_Projects
+
+[33mcommit 0be706e1a49c92fccbcb7fac86331ac08c213832[m
+Author: gustavex22 <gustavex618@gmail.com>
+Date:   Fri Mar 14 17:43:34 2025 -0500
+
+    Projecto para analizar los sentimientos de las palabras
+
+[33mcommit 51ec3486c557c885091f7ce83719f994f81b64df[m
+Author: gustavex22 <108594520+gustavex22@users.noreply.github.com>
+Date:   Fri Mar 14 17:24:22 2025 -0500
+
+    Create README.md
+
+[33mcommit 1a27478337c49b5e7e5555244231496bd619c939[m
+Author: gustavex22 <gustavex618@gmail.com>
+Date:   Fri Mar 14 17:19:49 2025 -0500
+
+    first commit
