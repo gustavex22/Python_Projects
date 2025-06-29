@@ -8,10 +8,16 @@ def Tecla_Exit(run , event): #? Identifica si el evento salir se cumple
     else:
         run = True
 
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_F4 and (event.mod & pygame.KMOD_ALT):
+            run = False
+
     return run
 
 
-def Tecla_Identity(event,Option):#? Identifica que tecla se ha presionado y actualiza las opciones de movimiento
+def Tecla_Identity(event,Option,ventana):#? Identifica que tecla se ha presionado y actualiza las opciones de movimiento
+    fullscreen = ventana.get_flags() & pygame.FULLSCREEN
+
 
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_a or event.key == pygame.K_LEFT:
@@ -22,6 +28,13 @@ def Tecla_Identity(event,Option):#? Identifica que tecla se ha presionado y actu
             Option.M_Atras = True
         if event.key == pygame.K_w or event.key == pygame.K_UP:
             Option.M_Arriba = True
+
+        if event.key == pygame.K_F11:
+            if not fullscreen:
+                ventana = pygame.display.set_mode((1360, 768), pygame.FULLSCREEN)
+            else:
+                ventana = pygame.display.set_mode((Option.Altura,Option.Ancho),pygame.RESIZABLE)
+
 
 
 #! Este bloque de codigo es para cuando se deja de tocar una tecla, es opcional codificarlo
@@ -34,6 +47,8 @@ def Tecla_Identity(event,Option):#? Identifica que tecla se ha presionado y actu
             Option.M_Atras = False
         if event.key == pygame.K_w or event.key == pygame.K_UP:
             Option.M_Arriba = False
+
+
 
 
 def Update_Movement(PX, PY, Option, Velocidad, player):
