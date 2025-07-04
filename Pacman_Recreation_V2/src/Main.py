@@ -1,14 +1,11 @@
 import pygame
+import os
 from numpy.ma.mrecords import fromrecords
 
 from Pacman_Recreation_V2.src.settings import Options
 from Pacman_Recreation_V2.src.Entities.Player import pacman
 from Pacman_Recreation_V2.src.Input import Teclado_Controller
 from Pacman_Recreation_V2.src.Input import Ventana_Controller
-
-
-
-
 
 #TODO Recreacion del juego pacman
 
@@ -42,13 +39,20 @@ def Init_Components(): #! Inicializa los componentes del juego
 
     #* Referencias
     settings = Options
-    velocidad = Options.Velocidad
+
+    ancho = settings.Ancho
+    altura = settings.Altura
+
+    velocidad = settings.Velocidad
     PX = settings.PosicionX
     PY = settings.PosicionY
 
-
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "0,30"
     #* Inicializa pygame
-    Ventana = pygame.display.set_mode((settings.Ancho, settings.Altura),pygame.RESIZABLE)#* Se crea una ventana con las escalas de ancho y alto
+    pygame.init()
+
+    Ventana = pygame.display.set_mode((ancho, altura),pygame.RESIZABLE)#* Se crea una ventana con las escalas de ancho y alto
+
     pygame.display.set_caption(settings.Ventana_name)#* Se establece el nombre de la ventana
 
     reloj = pygame.time.Clock()#* Se usa la funcion Clock para establecer los fps
@@ -64,10 +68,10 @@ def Ventana_draw(Interfaz,Options):
 #todo Inicializar juego
 
 def Main():
-    global Ventana
+
     Run = True
     Init_Components()
-
+    global Ventana
 
     # Bucle del juego
     while Run:
@@ -85,8 +89,8 @@ def Main():
         # todo Identificador de teclas
         for event in pygame.event.get():  # ?bucle para reconocer que teclas se han presionado
 
-            # * Actualiza la ventana
-            Ventana = Ventana_Controller.fullscreen(event,settings,Ventana)
+            # * Actualiza la ventana opciones
+            Ventana = Ventana_Controller.UpdateInfo(event,settings,Ventana) #fullscreen(event,settings,Ventana)
 
             # *Evento salir
             Run = Teclado_Controller.Tecla_Exit(Run, event)

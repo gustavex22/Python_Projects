@@ -29,15 +29,7 @@ def Tecla_Identity(event,Option,ventana):#? Identifica que tecla se ha presionad
         if event.key == pygame.K_w or event.key == pygame.K_UP:
             Option.M_Arriba = True
 
-        if event.key == pygame.K_F11:
-            if not fullscreen:
-                ventana = pygame.display.set_mode((1360, 768), pygame.FULLSCREEN)
-            else:
-                ventana = pygame.display.set_mode((Option.Altura,Option.Ancho),pygame.RESIZABLE)
-
-
-
-#! Este bloque de codigo es para cuando se deja de tocar una tecla, es opcional codificarlo
+    #! Este bloque de codigo es para cuando se deja de tocar una tecla, es opcional codificarlo
     if event.type == pygame.KEYUP:
         if event.key == pygame.K_a or event.key == pygame.K_LEFT:
             Option.M_Izquierda = False

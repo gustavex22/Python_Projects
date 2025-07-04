@@ -20,6 +20,7 @@ class pacman:
             TOP_down =self.forma.top
             TOP_up =self.forma.bottom
 
+            print(f"Posicion del Pacman: {self.forma.x}, {self.forma.y}")
             # Limitar dentro de la ventana
             if TOP_left < 0:
                 self.forma.left = 0

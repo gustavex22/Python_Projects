@@ -1,6 +1,7 @@
 
 #? Global
-contador = 0
+import pygame
+import os
 
 
 #?Movimiento del Pacman
@@ -14,8 +15,15 @@ M_Atras = False
 Ventana_name= "Pacman"
 ColorFondo = (0,64,128) #* azul marino
 fps = 120 #? Frames por segundo
-Ancho = 800
-Altura = 700
+
+pygame.init()
+info = pygame.display.Info()
+
+
+Ancho = info.current_w #1360
+Altura = info.current_h -30#768
+
+Fullscreen = False
 
 
 #? pacman
